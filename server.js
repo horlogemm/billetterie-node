@@ -1,11 +1,21 @@
-const express = require("express");
-const puppeteer = require("puppeteer");
-const nodemailer = require("nodemailer");
-const QRCode = require("qrcode");
 
+
+
+const express = require("express");
 const app = express();
 
+// middlewares
+app.use(express.json());
+app.use(express.static("public"));
+
+// routes
+app.get("/", (req, res) => {
+    res.send("Hello");
+});
+
+// PORT (à la FIN)
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
     console.log("Server running on port " + PORT);
 });
@@ -13,6 +23,9 @@ app.listen(PORT, () => {
 const browser = await puppeteer.launch({
   args: ['--no-sandbox', '--disable-setuid-sandbox']
 });
+
+const puppeteer = require("puppeteer");
+const QRCode = require("qrcode");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
