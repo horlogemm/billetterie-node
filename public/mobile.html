@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Inscription</title>
+<link rel="stylesheet" href="stylesheet.css" />
+</head>
+
+<body>
+
+    <div class="mobile">
+
+        <img src="http://localhost:3000/logo.png" alt="Logo de l'événement" class="logo">
+
+        <h1>Inscription</h1>
+
+        <form action="/generate" method="POST">
+                    
+            <div style="display:flex;gap:25px;">
+            <div style="flex:1;display:flex;flex-direction: column;"><label>Nom</label><input type="text" name="lastname" required></div>
+            <div style="flex:1;display:flex;flex-direction: column;"><label>Prénom</label><input type="text" name="firstname" required></div></div>
+            <label>Email</label><input type="email" name="email" required>
+            <label>Téléphone</label><input type="text" name="phone" placeholder="" required>
+            <label>Entreprise</label><input type="text" name="entreprise">
+            <div class="checkbox"><label><input type="checkbox" required>J’accepte que les informations saisies soient utilisées pour générer mon billet et me l’envoyer par email.</label>
+            </div>
+
+            <button type="submit">S'inscrire</button>
+
+        </form>
+        <div class="small"><a href="">Charte de confidentialité</a></div>
+    </div>
+
+</body>
+</html>
