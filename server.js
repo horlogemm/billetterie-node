@@ -16,9 +16,7 @@ app.get("/", (req, res) => {
 // PORT (à la FIN)
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log("Server running on port " + PORT);
-});
+
 
 const browser = await puppeteer.launch({
   args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -137,6 +135,6 @@ app.post("/generate", async (req, res) => {
     res.send(pdf);
 });
 
-app.listen(3000, () => {
-    console.log("Serveur lancé sur http://localhost:3000");
+app.listen(PORT, () => {
+    console.log("Server running on port " + PORT);
 });
