@@ -1,3 +1,12 @@
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log("Server running on port " + PORT);
+});
+
+const browser = await puppeteer.launch({
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
+
 const express = require("express");
 const puppeteer = require("puppeteer");
 const nodemailer = require("nodemailer");
